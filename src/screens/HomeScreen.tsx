@@ -7,7 +7,7 @@ import Home from "@/assets/svgs/home.svg";
 import { LinearGradient } from "expo-linear-gradient";
 import GradientText from "@/src/components/GradientText";
 
-const  HomeScreen = () => {
+const HomeScreen = () => {
   const [isFontLoaded] = useFonts({
     Inter: require("@/assets/fonts/InterRegular.ttf"),
   });
@@ -43,6 +43,6 @@ const  HomeScreen = () => {
       <Home width={48} height={48} />
     </LinearGradient>
   );
-}
+};
 
 export default HomeScreen;
