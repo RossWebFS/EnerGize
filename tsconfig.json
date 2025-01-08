@@ -1,7 +1,7 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "strict": true,
     "noImplicitAny": true,
     "alwaysStrict": true,
@@ -10,5 +10,5 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src/"]
+  "include": ["./"]
 }

@@ -3,7 +3,9 @@ import * as SplashScreen from "expo-splash-screen";
 import { useFonts } from "expo-font";
 import { useEffect } from "react";
 
-const Home = () => {
+import Home from "@/assets/svgs/home.svg";
+
+function HomeScreen() {
   const [isFontLoaded] = useFonts({
     Inter: require("../../assets/fonts/InterRegular.ttf"),
   });
@@ -24,8 +26,11 @@ const Home = () => {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text style={{ fontFamily: "Inter" }}>Home Screen</Text>
+      <View>
+        <Home width={48} height={48} />
+      </View>
     </View>
   );
-};
+}
 
-export default Home;
+export default HomeScreen;
