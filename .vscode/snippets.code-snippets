@@ -1,0 +1,38 @@
+{
+  "Default Arrow Component": {
+    "prefix": "dac",
+    "body": [
+      "import { View } from \"react-native\";",
+      "",
+      "const $1 = () => {",
+      "  return (",
+      "    <View>$2</View>",
+      "  );",
+      "};",
+      "",
+      "export default $1;",
+      ""
+    ],
+    "description": "Create a component with arrow function"
+  },
+  "Typed Arrow Component": {
+    "prefix": "tac",
+    "body": [
+      "import { View } from \"react-native\";",
+      "",
+      "type $1Props = {",
+      "$3",
+      "};",
+      "",
+      "const $1 = ({$4}: $1Props) => {",
+      "  return (",
+      "    <View>$2</View>",
+      "  );",
+      "};",
+      "",
+      "export default $1;",
+      ""
+    ],
+    "description": "Create a component with arrow function with typed props"
+  }
+}
