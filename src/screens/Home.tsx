@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import HomeIcon from "@/assets/svgs/home.svg";
 import { LinearGradient } from "expo-linear-gradient";
 import GradientText from "@/src/components/GradientText";
+import appStyles from "@design-system";
 
 const Home = () => {
   const [isFontLoaded] = useFonts({
@@ -34,7 +35,7 @@ const Home = () => {
           justifyContent: "center",
           backgroundColor: "#000",
         }}
-        colors={["#000", "#00742e2c"]}
+        colors={[appStyles.primaryColor, appStyles.gradientColor]}
         locations={[0.4, 1]}
         start={{ x: 0.5, y: 0 }}
         end={{ x: 0.5, y: 1 }}

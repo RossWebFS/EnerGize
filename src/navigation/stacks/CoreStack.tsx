@@ -5,6 +5,7 @@ import WorkoutsStack from "./WorkoutsStack";
 import Profile from "@/src/screens/Profile";
 import { ScreenTypes } from "@/src/navigation.d";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
+import appStyles from "@design-system";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ const CoreStack = () => {
       initialRouteName={ScreenTypes.Home}
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarActiveTintColor: "#00580c",
+        tabBarActiveTintColor: appStyles.secondaryColor,
         tabBarIcon: ({ color, size }) => {
           let icon;
 
@@ -25,8 +26,8 @@ const CoreStack = () => {
           } else if (route.name === ScreenTypes.Profile) {
             icon = "user";
           }
-          
-          return <FontAwesome5 name={icon} size={24} color={color} />;
+
+          return <FontAwesome5 name={icon} size={size} color={color} />;
         },
       })}
     >

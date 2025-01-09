@@ -7,6 +7,7 @@
     "alwaysStrict": true,
     "baseUrl": ".",
     "paths": {
+      "@design-system": ["./src/styles/index"],
       "@/*": ["./*"]
     }
   },

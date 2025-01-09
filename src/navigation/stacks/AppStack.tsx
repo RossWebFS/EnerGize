@@ -4,6 +4,7 @@ import CoreStack from "@/src/navigation/stacks/CoreStack";
 import { useState } from "react";
 import AuthStack from "@/src/navigation/stacks/AuthStack";
 import { ScreenTypes } from "@/src/navigation.d";
+import appStyles from "@design-system";
 
 const Stack = createNativeStackNavigator();
 
@@ -17,7 +18,7 @@ const AppStack = () => {
       <View
         style={{ flex: 1, justifyContent: "center", backgroundColor: "#000" }}
       >
-        <ActivityIndicator size="large" color="#005e1c" />
+        <ActivityIndicator size="large" color={appStyles.secondaryColor} />
       </View>
     );
   }
