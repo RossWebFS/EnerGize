@@ -1,9 +1,7 @@
 import { FlatList, SafeAreaView, ScrollView, Text, View } from "react-native";
-import * as SplashScreen from "expo-splash-screen";
-import { useFonts } from "expo-font";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { LinearGradient } from "expo-linear-gradient";
-import GradientText from "@/src/components/GradientText";
+import GradientText from "@/src/components/GradientText/GradientText";
 import StatsCard from "@/src/screens/Home/components/StatsCard/StatsCard";
 import { useTheme } from "@react-navigation/native";
 import ThemeToggler from "@/src/screens/Home/components/ThemeToggler/ThemeToggler";
@@ -11,7 +9,6 @@ import DateCard from "@/src/screens/Home/components/DateCard/DateCard";
 import ActivityProgressBar from "@/src/screens/Home/components/ActivityProgressBar/ActivityProgressBar";
 import TrainingCard from "@/src/screens/Home/components/TrainigCard/TrainingCard";
 import styles from "@/src/screens/Home/Home.style";
-// import appStyles from "@design-system";
 
 const workouts = [
   {
@@ -83,38 +80,20 @@ const workouts = [
 
 const stats = [
   {
-    number: "100 kal",
+    number: "100",
     union: "Calories",
     icon: "walking",
   },
   {
     number: "25",
-    union: "minutes",
+    union: "Minutes",
     icon: "clock",
   },
 ];
 
 const Home = () => {
   const [progress, setProgress] = useState(0.4);
-
-  const [isFontLoaded] = useFonts({
-    Inter: require("@/assets/fonts/InterRegular.ttf"),
-  });
-
   const { colors } = useTheme();
-
-  useEffect(() => {
-    async function prepare() {
-      await SplashScreen.preventAutoHideAsync();
-    }
-    prepare();
-  }, []);
-
-  if (!isFontLoaded) {
-    return undefined;
-  } else {
-    SplashScreen.hideAsync();
-  }
 
   return (
     <SafeAreaView style={styles.safeAreaView}>

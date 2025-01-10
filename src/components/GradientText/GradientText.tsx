@@ -1,8 +1,7 @@
 import MaskedView from "@react-native-masked-view/masked-view";
-import { Text, TextStyle, ViewStyle } from "react-native";
+import { Platform, Text, TextStyle, ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { TextProps } from "react-native-svg";
-import { appStyles } from "@design-system";
 
 type GradientTextProps = {
   colors?: readonly [string, string, ...string[]];
@@ -20,6 +19,17 @@ const GradientText = ({
   gradientStyle,
   ...props
 }: GradientTextProps) => {
+  if (Platform.OS === "web") {
+    const webGradientStyle = {
+      ...style,
+      background: `linear-gradient(to right, ${colors.join(", ")})`,
+      WebkitBackgroundClip: "text",
+      color: "transparent",
+    } as TextStyle;
+
+    return <Text {...props} style={webGradientStyle} />;
+  }
+
   return (
     <MaskedView maskElement={<Text {...props} style={style} />}>
       <LinearGradient

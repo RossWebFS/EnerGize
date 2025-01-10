@@ -2,7 +2,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 
 const styles = EStyleSheet.create({
   imageBackground: {
-    width: "100%",
+    width: 375,
     height: 200,
     alignSelf: "center",
     borderRadius: 15,

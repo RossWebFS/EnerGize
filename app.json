@@ -22,13 +22,7 @@
     },
     "plugins": [
       "expo-asset",
-      [
-        "expo-splash-screen",
-        {
-          "backgroundColor": "#ffffff",
-          "image": "./assets/images/splash-icon.png"
-        }
-      ],
+      "expo-splash-screen",
       "react-native-edge-to-edge"
     ]
   }

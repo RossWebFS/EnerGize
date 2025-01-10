@@ -27,6 +27,7 @@ const styles = EStyleSheet.create({
     textAlign: "center",
     fontSize: 14,
     color: "#838383",
+    fontFamily: "Poppins"
   },
 });
 
