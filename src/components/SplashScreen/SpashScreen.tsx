@@ -1,9 +1,10 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
-import { Animated, Text } from "react-native";
+import { Dispatch, SetStateAction, useEffect } from "react";
+import { Animated } from "react-native";
 import * as SplashScreen from "expo-splash-screen";
 import styles from "@/src/components/SplashScreen/SpashScreen.style";
 import GradientText from "@/src/components/GradientText/GradientText";
 import { useFonts } from "expo-font";
+import { useTheme } from "@react-navigation/native";
 
 type SplashScreenCustomProps = {
   setIsReady: Dispatch<SetStateAction<boolean>>;
@@ -16,6 +17,8 @@ const SplashScreenCustom = ({ setIsReady }: SplashScreenCustomProps) => {
     Inter: require("@/assets/fonts/InterRegular.ttf"),
     Poppins: require("@/assets/fonts/PoppinsRegular.ttf"),
   });
+
+  const { colors } = useTheme();
 
   useEffect(() => {
     const prepare = async () => {
@@ -48,8 +51,12 @@ const SplashScreenCustom = ({ setIsReady }: SplashScreenCustomProps) => {
   }
 
   return (
-    <Animated.View style={[styles.container, { opacity: fadeAnim }]}>
-      <GradientText style={styles.text}>EnerGize</GradientText>
+    <Animated.View
+      style={[styles.container, { backgroundColor: colors.background }]}
+    >
+      <GradientText style={{ ...styles.text, opacity: fadeAnim }}>
+        EnerGize
+      </GradientText>
     </Animated.View>
   );
 };

@@ -6,7 +6,7 @@ export const lightTheme = {
   colors: {
     ...DefaultTheme.colors,
     background: "#eee",
-    text: "#000",
+    text: "#111",
   },
 };
 
@@ -15,7 +15,7 @@ export const darkTheme = {
   dark: true,
   colors: {
     ...DefaultTheme.colors,
-    background: "#000",
+    background: "#111",
     text: "#eee",
   },
 };

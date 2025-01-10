@@ -1,23 +1,6 @@
 import EStyleSheet from "react-native-extended-stylesheet";
 
 const styles = EStyleSheet.create({
-  safeAreaView: {
-    minHeight: "100%",
-    backgroundColor: "transparent",
-  },
-  linearGradient: {
-    minHeight: "100%",
-  },
-  header: {
-    marginTop: 50,
-    paddingHorizontal: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  gradientText: {
-    fontSize: 24,
-    fontWeight: 600,
-  },
   activityTitle: {
     marginTop: 30,
     marginBottom: 20,

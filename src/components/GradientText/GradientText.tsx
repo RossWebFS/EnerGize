@@ -1,5 +1,5 @@
 import MaskedView from "@react-native-masked-view/masked-view";
-import { Platform, Text, TextStyle, ViewStyle } from "react-native";
+import { Animated, Platform, TextStyle, ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { TextProps } from "react-native-svg";
 
@@ -27,18 +27,18 @@ const GradientText = ({
       color: "transparent",
     } as TextStyle;
 
-    return <Text {...props} style={webGradientStyle} />;
+    return <Animated.Text {...props} style={webGradientStyle} />;
   }
 
   return (
-    <MaskedView maskElement={<Text {...props} style={style} />}>
+    <MaskedView maskElement={<Animated.Text {...props} style={style} />}>
       <LinearGradient
         colors={colors}
         start={start}
         end={end}
         style={gradientStyle}
       >
-        <Text {...props} style={{ ...style, opacity: 0 }} />
+        <Animated.Text {...props} style={{ ...style, opacity: 0 }} />
       </LinearGradient>
     </MaskedView>
   );

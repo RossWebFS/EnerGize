@@ -1,14 +1,12 @@
-import { FlatList, SafeAreaView, ScrollView, Text, View } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 import { useState } from "react";
-import { LinearGradient } from "expo-linear-gradient";
-import GradientText from "@/src/components/GradientText/GradientText";
 import StatsCard from "@/src/screens/Home/components/StatsCard/StatsCard";
 import { useTheme } from "@react-navigation/native";
-import ThemeToggler from "@/src/screens/Home/components/ThemeToggler/ThemeToggler";
 import DateCard from "@/src/screens/Home/components/DateCard/DateCard";
 import ActivityProgressBar from "@/src/screens/Home/components/ActivityProgressBar/ActivityProgressBar";
-import TrainingCard from "@/src/screens/Home/components/TrainigCard/TrainingCard";
+import TrainingCard from "@/src/screens/Home/components/TrainingCard/TrainingCard";
 import styles from "@/src/screens/Home/Home.style";
+import AppLayout from "@/src/components/AppLayout/AppLayout";
 
 const workouts = [
   {
@@ -96,49 +94,36 @@ const Home = () => {
   const { colors } = useTheme();
 
   return (
-    <SafeAreaView style={styles.safeAreaView}>
-      <LinearGradient
-        style={[styles.linearGradient, { backgroundColor: colors.background }]}
-        colors={[colors.background, "#00742e2c"]}
-        locations={[0.5, 1]}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
-      >
-        <View style={styles.header}>
-          <GradientText style={styles.gradientText}>EnerGize</GradientText>
-          <ThemeToggler />
+    <AppLayout>
+      <View style={styles.activityTitle}>
+        <Text style={[styles.activityTitleText, { color: colors.text }]}>
+          Your Today Activity
+        </Text>
+      </View>
+
+      <ScrollView contentContainerStyle={styles.statsScroll} horizontal>
+        {stats.map((item) => (
+          <StatsCard data={item} key={Math.random()} />
+        ))}
+      </ScrollView>
+
+      <View style={styles.activityProgressContainer}>
+        <DateCard />
+        <View style={styles.progressBarContainer}>
+          <ActivityProgressBar activity="Finished" progress={progress} />
+          <ActivityProgressBar activity="Finished" progress={progress} />
         </View>
+      </View>
 
-        <View style={styles.activityTitle}>
-          <Text style={[styles.activityTitleText, { color: colors.text }]}>
-            Your Today Activity
-          </Text>
-        </View>
-
-        <ScrollView contentContainerStyle={styles.statsScroll} horizontal>
-          {stats.map((item) => (
-            <StatsCard data={item} key={Math.random()} />
-          ))}
-        </ScrollView>
-
-        <View style={styles.activityProgressContainer}>
-          <DateCard />
-          <View style={styles.progressBarContainer}>
-            <ActivityProgressBar activity="Finished" progress={progress} />
-            <ActivityProgressBar activity="Finished" progress={progress} />
-          </View>
-        </View>
-
-        <FlatList
-          data={workouts}
-          renderItem={({ item }) => <TrainingCard data={item} />}
-          keyExtractor={() => String(Math.random())}
-          contentContainerStyle={styles.flatList}
-          snapToAlignment="center"
-          horizontal
-        />
-      </LinearGradient>
-    </SafeAreaView>
+      <FlatList
+        data={workouts}
+        renderItem={({ item }) => <TrainingCard data={item} />}
+        keyExtractor={() => String(Math.random())}
+        contentContainerStyle={styles.flatList}
+        snapToAlignment="center"
+        horizontal
+      />
+    </AppLayout>
   );
 };
 

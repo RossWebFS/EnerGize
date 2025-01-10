@@ -5,7 +5,6 @@ const styles = EStyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#fff",
   },
   text: {
     fontSize: 24,

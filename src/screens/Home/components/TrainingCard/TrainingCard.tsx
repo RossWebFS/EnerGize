@@ -1,4 +1,4 @@
-import styles from "@/src/screens/Home/components/TrainigCard/TrainigCard.style";
+import styles from "@/src/screens/Home/components/TrainingCard/TrainingCard.style";
 import { ImageBackground, Text, View } from "react-native";
 
 type ExerciseT = {
