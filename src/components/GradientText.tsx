@@ -2,6 +2,7 @@ import MaskedView from "@react-native-masked-view/masked-view";
 import { Text, TextStyle, ViewStyle } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { TextProps } from "react-native-svg";
+import { appStyles } from "@design-system";
 
 type GradientTextProps = {
   colors?: readonly [string, string, ...string[]];
@@ -12,7 +13,7 @@ type GradientTextProps = {
 } & TextProps;
 
 const GradientText = ({
-  colors = ["#045400", "#003d02"],
+  colors = ["#7db200", "#00a21b"],
   start = { x: 0, y: 0 },
   end = { x: 1, y: 0 },
   style,

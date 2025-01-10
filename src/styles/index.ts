@@ -1,6 +1,4 @@
-import EStyleSheet from "react-native-extended-stylesheet";
 import appStyles from "@/src/styles/variables";
+import { lightTheme, darkTheme } from "@/src/styles/themes";
 
-//global styles
-
-export default appStyles
+export { appStyles, lightTheme, darkTheme };
