@@ -1,5 +1,5 @@
 import Workouts from "@/src/screens/Workouts/Workouts";
-import WorkoutDetails from "@/src/screens/WorkoutDetalis";
+import WorkoutDetails from "@/src/screens/WorkoutDetails/WorkoutDetalis";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ScreenTypes } from "@/src/navigation.d";
 
