@@ -11,5 +11,6 @@ export enum ScreenTypes {
   WorkoutDetails = "WorkoutDetails",
   Verifying = "Verifying",
   CoreStack = "CoreStack",
-  AuthStack = "AuthStack"
+  AuthStack = "AuthStack",
+  WorkoutsStack = "WorkoutsStack"
 }

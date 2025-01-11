@@ -19,6 +19,11 @@ const styles = EStyleSheet.create({
     fontSize: 16,
     marginBottom: 20,
   },
+  exercisesTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
 });
 
 export default styles;

@@ -3,29 +3,13 @@ import { RootStackParamList, ScreenTypes } from "@/src/navigation.d";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useNavigation, useTheme } from "@react-navigation/native";
 import styles from "@/src/screens/Workouts/components/WorkoutCard.style";
+import { WorkoutT } from "@/src/types/workouts";
+import formatDate from "@/src/utils/formatDate";
 
 type NavigationProp = NativeStackNavigationProp<
   RootStackParamList,
   ScreenTypes.WorkoutDetails
 >;
-
-type ExerciseT = {
-  title: string;
-  description: string;
-  reps: number;
-  sets: number;
-  img: string;
-};
-
-type WorkoutT = {
-  img: string;
-  exercices: ExerciseT[];
-  id: string;
-  type: string;
-  duration: number;
-  calories: number;
-  date: string;
-};
 
 type WorkoutsProps = {
   workout: WorkoutT;
@@ -53,7 +37,7 @@ const WorkoutCard = ({ workout }: WorkoutsProps) => {
       ]}
       onPress={() =>
         navigation.navigate(ScreenTypes.WorkoutDetails, {
-          workoutId: workout.id,
+          workoutId: workout._id,
         })
       }
     >
@@ -66,7 +50,7 @@ const WorkoutCard = ({ workout }: WorkoutsProps) => {
           {workout.duration} min | {workout.calories} kcal
         </Text>
         <Text style={[styles.date, { color: colors.text }]}>
-          {workout.date}
+          {formatDate(workout.date)}
         </Text>
       </View>
     </TouchableOpacity>

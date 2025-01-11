@@ -1,23 +1,6 @@
 import styles from "@/src/screens/Home/components/TrainingCard/TrainingCard.style";
+import { WorkoutT } from "@/src/types/workouts";
 import { ImageBackground, Text, View } from "react-native";
-
-type ExerciseT = {
-  title: string;
-  description: string;
-  reps: number;
-  sets: number;
-  img: string;
-};
-
-type WorkoutT = {
-  img: string;
-  exercices: ExerciseT[];
-  id: string;
-  type: string;
-  duration: number;
-  calories: number;
-  date: string;
-};
 
 type TrainingCardProps = {
   data: WorkoutT;

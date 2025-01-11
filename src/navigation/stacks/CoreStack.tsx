@@ -28,7 +28,7 @@ const CoreStack = () => {
 
           if (route.name === ScreenTypes.Home) {
             icon = "home";
-          } else if (route.name === ScreenTypes.Workouts) {
+          } else if (route.name === ScreenTypes.WorkoutsStack) {
             icon = "dumbbell";
           }
 
@@ -48,7 +48,7 @@ const CoreStack = () => {
       })}
     >
       <Tab.Screen name={ScreenTypes.Home} component={Home} />
-      <Tab.Screen name={ScreenTypes.Workouts} component={WorkoutsStack} />
+      <Tab.Screen name={ScreenTypes.WorkoutsStack} component={WorkoutsStack} />
     </Tab.Navigator>
   );
 };

@@ -5,7 +5,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Text, View } from "react-native";
 
 type TStats = {
-  number: string;
+  number: number;
   union: string;
   icon: string;
 };

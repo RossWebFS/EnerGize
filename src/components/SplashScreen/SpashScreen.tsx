@@ -5,6 +5,8 @@ import styles from "@/src/components/SplashScreen/SpashScreen.style";
 import GradientText from "@/src/components/GradientText/GradientText";
 import { useFonts } from "expo-font";
 import { useTheme } from "@react-navigation/native";
+import useAppDispatch from "@/src/hooks/useAppDispatch";
+import { fetchWorkoutsRequest } from "@/src/store/actions/workoutActions";
 
 type SplashScreenCustomProps = {
   setIsReady: Dispatch<SetStateAction<boolean>>;
@@ -17,6 +19,7 @@ const SplashScreenCustom = ({ setIsReady }: SplashScreenCustomProps) => {
     Inter: require("@/assets/fonts/InterRegular.ttf"),
     Poppins: require("@/assets/fonts/PoppinsRegular.ttf"),
   });
+  const dispatch = useAppDispatch();
 
   const { colors } = useTheme();
 
@@ -24,7 +27,9 @@ const SplashScreenCustom = ({ setIsReady }: SplashScreenCustomProps) => {
     const prepare = async () => {
       await SplashScreen.preventAutoHideAsync();
       SplashScreen.hideAsync();
-
+      
+      dispatch(fetchWorkoutsRequest());
+      
       if (isFontLoaded) {
         Animated.sequence([
           Animated.timing(fadeAnim, {

@@ -1,6 +1,7 @@
 import { Text, View } from "react-native";
 import { useTheme } from "@react-navigation/native";
 import styles from "@/src/screens/WorkoutDetails/components/WorkoutInfo/WorkoutInfo.style";
+import formatDate from "@/src/utils/formatDate";
 
 type WorkoutInfoProps = {
   type: string;
@@ -14,7 +15,7 @@ const WorkoutInfo = ({ type, date, duration, calories }: WorkoutInfoProps) => {
   return (
     <View>
       <Text style={[styles.title, { color: colors.text }]}>{type} Workout</Text>
-      <Text style={[styles.date, { color: colors.text }]}>{date}</Text>
+      <Text style={[styles.date, { color: colors.text }]}>{formatDate(date)}</Text>
       <Text style={[styles.duration, { color: colors.text }]}>
         Duration: {duration} min
       </Text>

@@ -5,6 +5,8 @@ import EStyleSheet from "react-native-extended-stylesheet";
 import Navigation from "@/src/navigation/index";
 import { ThemeProvider } from "@/src/contexts/ThemeContext";
 import { AuthProvider } from "@/src/contexts/AuthContext";
+import { Provider } from "react-redux";
+import store from "@/src/store";
 
 EStyleSheet.build();
 
@@ -14,7 +16,9 @@ export function App() {
   return (
     <ThemeProvider>
       <AuthProvider>
-        <Navigation />
+        <Provider store={store}>
+          <Navigation />
+        </Provider>
       </AuthProvider>
     </ThemeProvider>
   );

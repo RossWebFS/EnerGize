@@ -3,6 +3,7 @@ import EStyleSheet from "react-native-extended-stylesheet";
 const styles = EStyleSheet.create({
   header: {
     marginTop: 50,
+    paddingBottom: 20,
     paddingHorizontal: 20,
     flexDirection: "row",
     justifyContent: "space-between",
