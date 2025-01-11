@@ -2,7 +2,6 @@ import React, { useLayoutEffect } from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "@/src/screens/Home/Home";
 import WorkoutsStack from "./WorkoutsStack";
-import Profile from "@/src/screens/Profile";
 import { ScreenTypes } from "@/src/navigation.d";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { StatusBar } from "react-native";
@@ -31,8 +30,6 @@ const CoreStack = () => {
             icon = "home";
           } else if (route.name === ScreenTypes.Workouts) {
             icon = "dumbbell";
-          } else if (route.name === ScreenTypes.Profile) {
-            icon = "user";
           }
 
           return <FontAwesome5 name={icon} size={size} color={color} />;
@@ -52,7 +49,6 @@ const CoreStack = () => {
     >
       <Tab.Screen name={ScreenTypes.Home} component={Home} />
       <Tab.Screen name={ScreenTypes.Workouts} component={WorkoutsStack} />
-      <Tab.Screen name={ScreenTypes.Profile} component={Profile} />
     </Tab.Navigator>
   );
 };

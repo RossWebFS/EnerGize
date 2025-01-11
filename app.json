@@ -9,13 +9,15 @@
     "newArchEnabled": true,
     "scheme": "energize",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ser.ross.energize"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.ser.ross.energize"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
@@ -23,7 +25,22 @@
     "plugins": [
       "expo-asset",
       "expo-splash-screen",
-      "react-native-edge-to-edge"
-    ]
+      "react-native-edge-to-edge",
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        {
+          "color": "#ffffff",
+          "mode": "production"
+        }
+      ],
+      "expo-font"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "0e0926d8-1ebe-49a7-aef6-30bdc53c9dc7"
+      }
+    },
+    "owner": "ser.ross"
   }
 }
